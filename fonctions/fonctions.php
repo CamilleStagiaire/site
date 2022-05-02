@@ -19,6 +19,7 @@ function navMenu(string $className): string
         navItem('/codePhp/php/menu.php', 'Menu', $className) .
         navItem('/codePhp/php/composerGlace.php', 'Glaces', $className) .
         navItem('/codePhp/php/connexion.php', 'Connexion', $className) .
+        navItem('/codePhp/php/forum.php', 'Forum', $className) .
         navItem('/codePhp/php/newsletter.php', 'Newsletter', $className) ;        
 }
 

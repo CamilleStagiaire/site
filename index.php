@@ -2,30 +2,23 @@
 session_start();
 $titre = "accueil";
 include "pages/header.php";
-$aDeviner = 50;
 ?>
 
 <main class="container text-center mt-3">
-    <h1>Page d'accueil</h1>
-    <h3 class="mt-5 mb-5"> Devinez un nombre entre 1 et 100</h3>
+    <h1>Bienvenue sur mon site <?= $_SESSION['username'] ?? "" ?></h1>
 
-    <div class="mb-3">
-        <form action="index.php" method="GET">
-            <input type="number" name="chiffre" placeholder="entrez un chiffre de 0 à 100" value="<?= $_GET['chiffre'] ?? 0 ?>">
-            <input style="background-color:rgb(13,110,253); color:white" type="submit" value="deviner">
-        </form>
+    <div class="row">
+
+        <div class="col-md-6 offset-3">
+            <h3 class="mt-5 mb-5"> Devinez un nombre entre 1 et 100</h3>
+            <div class="col-md-4 offset-4 mb-3">
+                <input class="form-control" type="number" name="chiffre" placeholder="entrez un chiffre" value="" id="nombre">
+            </div>
+            <button class="btn btn-primary" type="button" id="btnDeviner">Deviner</button>
+            <div id="afficherResultat"></div>
+        </div>
+
     </div>
-
-    <?php if (isset($_GET['chiffre'])) : ?>
-        <?php if ($_GET['chiffre'] < $aDeviner) : ?>
-            Le chiffre est trop petit
-        <?php elseif ($_GET['chiffre'] > $aDeviner) : ?>
-            Le chiffre est trop grand
-        <?php elseif ($_GET['chiffre'] = $aDeviner) : ?>
-            Vous avez trouvé
-        <?php endif ?>
-    <?php endif ?>
-    
 </main>
 
 <?php include "pages/footer.php" ?>

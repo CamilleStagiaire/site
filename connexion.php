@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 $titre = "connexion";
-
 
 $erreur = null;
 
@@ -19,7 +17,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
     if ($user !== null) {
-
         if (password_verify($inputPassword, $user['password'])) {
             $_SESSION['username'] = $inputLogin;
         } else {
@@ -30,8 +27,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 }
 
-
-
 include "pages/header.php";
 ?>
 
@@ -39,7 +34,7 @@ include "pages/header.php";
     <h1>Connexion</h1>
 
     <?php if (!empty($_SESSION['username'])) : ?>
-        <?php header('location: profil.php')?>
+        <?php header('location: profil.php') ?>
 
     <?php else : ?>
         <div class="text-center col-md-4 offset-4">
@@ -55,15 +50,14 @@ include "pages/header.php";
 
                 <?php if ($erreur) : ?>
                     <div class="alert alert-danger mt-3">
-                        <?= $erreur?>
+                        <?= $erreur ?>
                     </div>
                 <?php endif ?>
 
                 <button type="submit" class="btn btn-primary mt-3">Se connecter</button>
                 <a href="register.php" class="btn btn-success mt-3">Créer un compte</a>
-
-               
             </form>
+
         </div>
     <?php endif ?>
 </main>

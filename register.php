@@ -2,21 +2,14 @@
 include "pages/header.php";
 session_start();
 
-
-
-
 $titre = "compte";
 
 $success = null;
 $erreur = null;
 
-
-
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
-
-
 
         $inputLogin = htmlentities($_POST['username']);
         $inputPassword = htmlentities($_POST['password']);
@@ -44,9 +37,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $erreur = "Veuillez renseigner les informations";
     }
 }
-
-
-
 
 ?>
 
