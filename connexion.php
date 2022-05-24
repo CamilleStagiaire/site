@@ -34,7 +34,12 @@ include "pages/header.php";
     <h1>Connexion</h1>
 
     <?php if (!empty($_SESSION['username'])) : ?>
-        <?php header('location: profil.php') ?>
+        <div class="alert alert-success mt-3 col-md-6 offset-3">
+            <h2> Bienvenue <?= $_SESSION['username'] ?></h2>
+        </div>
+        <form action="logout.php">
+        <button type="submit" value="submit" class="btn btn-primary">Se déconnecter</button>
+    </form>
 
     <?php else : ?>
         <div class="text-center col-md-4 offset-4">

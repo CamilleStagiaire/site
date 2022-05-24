@@ -1,5 +1,7 @@
 
-    $('#region').change(function () {
+    var idRegion = document.getElementById('region');
+    
+    idRegion.addEventListener("change", function () {
 
         let xhr = new XMLHttpRequest();
         let region = document.getElementById('region').value;
@@ -18,7 +20,9 @@
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
         xhr.addEventListener("load", function () {
-            $('#departement').change(function () {
+            var idDep = document.getElementById('departement');
+
+            idDep.addEventListener("change", function () {
                 let xhr = new XMLHttpRequest();
                 let departement = document.getElementById('departement').value;
                 result.innerHTML = '';

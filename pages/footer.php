@@ -27,9 +27,9 @@
         <ul class="list-group text-center">
           <?= navMenu('list-group-item') ?>
         </ul>
-        <?php if (!empty($_SESSION['username'])) : ?>
-        <ul class="list-group text-center">
-          <li ><a class="nav-link active" href="profil.php">Profil</a></li>
+        <?php if (!empty($_SESSION['biere'])) : ?>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="panier.php">Panier</a></li>
         </ul>
         <?php endif ?>
       </div>
@@ -37,7 +37,6 @@
     <div class="card-footer text-muted"></div>
 
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

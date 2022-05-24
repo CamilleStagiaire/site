@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
             if ($exec !== false) {
                 $_SESSION['username'] = $inputLogin;
-                header('location: profil.php');
+                header('location: connexion.php');
             } else {           
                 $erreur = "erreur d'enregistrement";
             }

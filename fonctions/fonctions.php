@@ -19,8 +19,10 @@ function navMenu(string $className): string
         navItem('/codePhp/php/menu.php', 'Menu', $className) .
         navItem('/codePhp/php/composerGlace.php', 'Glaces', $className) .
         navItem('/codePhp/php/connexion.php', 'Connexion', $className) .
-        navItem('/codePhp/php/forum.php', 'Forum', $className) .
-        navItem('/codePhp/php/newsletter.php', 'Newsletter', $className) ;        
+        navItem('/codePhp/php/boutique.php', 'Boutique', $className) .
+        navItem('/codePhp/php/newsletter.php', 'Newsletter', $className) .
+        navItem('/codePhp/php/blog.php', "Blog", $className) . 
+        navItem('/codePhp/php/livre.php', "Livre d'Or", $className) ;        
 }
 
 //AFFICHAGE DES HORAIRES CORRIGE
@@ -104,29 +106,29 @@ function ouvertureFermeture()
 
 
 //PAGE COMPOSER GLACES
-function checkbox(string $name, string $value, array $data) : string
-{
-    $attributes = '';
+// function checkbox(string $name, string $value, array $data) : string
+// {
+//     $attributes = '';
 
-    if (isset($data[$name]) && in_array($value, $data[$name])) {
-        $attributes.= 'checked';
-    }
-    return <<<HTML
-    <input class= "form-check-input" type= "checkbox" value="$value" name ="{$name}[]" $attributes>
-    HTML;
-}
+//     if (isset($data[$name]) && in_array($value, $data[$name])) {
+//         $attributes.= 'checked';
+//     }
+//     return <<<HTML
+//     <input class= "form-check-input" type= "checkbox" value="$value" name ="{$name}[]" $attributes>
+//     HTML;
+// }
 
-function radio(string $name, string $value, array $data) : string
-{
-    $attributes = '';
+// function radio(string $name, string $value, array $data) : string
+// {
+//     $attributes = '';
 
-    if (isset($data[$name]) && $value === $data[$name]) {
-        $attributes.= 'checked';
-    }
-    return <<<HTML
-    <input class= "form-check-input" type= "radio" value="$value" name ="$name" $attributes>
-    HTML;
-}
+//     if (isset($data[$name]) && $value === $data[$name]) {
+//         $attributes.= 'checked';
+//     }
+//     return <<<HTML
+//     <input class= "form-check-input" type= "radio" value="$value" name ="$name" $attributes>
+//     HTML;
+// }
 
 
 function verifUser($db, string $user) : bool

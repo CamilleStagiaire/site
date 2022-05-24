@@ -14,7 +14,7 @@ include "pages/header.php";
 
     <?php foreach ($lignes as $ligne) : ?>
         <?php if (count($ligne) === 1) : ?>
-            <u><h3><?= $ligne[0] ?></u></h3>
+            <h2 class="bg-secondary text-white bg-opacity-50 mt-3 mb-3 border-top border-bottom  border-dark"><?= $ligne[0] ?></h2>
         <?php else : ?>
             <div class="row">
                 <div class="col-sm-8">

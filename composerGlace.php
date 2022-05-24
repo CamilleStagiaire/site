@@ -1,7 +1,8 @@
 <?php
 session_start();
 $titre = "glace";
-include "pages/header.php";
+require "pages/header.php";
+include_once 'class/Form.php';
 
 $parfums = [
     "Fraise" => 4,
@@ -51,7 +52,7 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
                 <?php foreach ($parfums as $parfum => $prix) : ?>
                     <div class="checkbox">
                         <label>
-                            <?= checkbox("parfum", $parfum, $_GET) ?>
+                            <?= Form::checkbox("parfum", $parfum, $_GET) ?>
                             <?= $parfum ?> - <?= $prix ?> €
                         </label>
                     </div>
@@ -60,7 +61,7 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
                 <?php foreach ($cornets as $cornet => $prix) : ?>
                     <div class="checkbox">
                         <label>
-                            <?= radio("cornet", $cornet, $_GET) ?>
+                            <?= Form::radio("cornet", $cornet, $_GET) ?>
                             <?= $cornet ?> - <?= $prix ?> €
                         </label>
                     </div>
@@ -69,7 +70,7 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
                 <?php foreach ($supplements as $supplement => $prix) : ?>
                     <div class="checkbox">
                         <label>
-                            <?= checkbox("supplement", $supplement, $_GET) ?>
+                            <?= Form::checkbox("supplement", $supplement, $_GET) ?>
                             <?= $supplement ?> - <?= $prix ?> €
                         </label>
                     </div>

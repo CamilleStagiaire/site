@@ -2,7 +2,7 @@
 $depSel = $_POST['dep'];
 
 $db = mysqli_connect("localhost", "root", "", "tuto-php", 3306) or die("Erreur de connexion à la base de données");
-$result = mysqli_query($db, "SELECT * FROM ville WHERE id_departement = $depSel");
+$result = mysqli_query($db, "SELECT * FROM ville WHERE id_departement = $depSel ORDER BY nom_VILLE ASC");
 $villes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
